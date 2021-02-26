@@ -33,6 +33,15 @@ class _SettingsFormState extends State<SettingsForm> {
           ),
           SizedBox(height: 20.0),
           //dropdown
+          DropdownButtonFormField(
+            items: sugars.map((sugar) {
+              return DropdownMenuItem(
+                value: sugar,
+                child: Text('$sugar sugars'),
+              );
+            }).toList(),
+            onChanged: (val) => setState(() => _currentSugars = val),
+          ),
           //slider
           RaisedButton(
             color: Colors.pink[400],
